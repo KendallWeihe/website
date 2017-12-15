@@ -1,0 +1,143 @@
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200vh;
+  background: black;
+}
+
+/*---------------------------------------*/
+
+.landing {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #BEC6C7;
+}
+
+.personal {
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  background: blue;
+  top: calc(100vh);
+}
+
+.connect {
+  position: absolute;
+  width: 100%;
+  height: 40vh;
+  background: white;
+  top: calc(160vh);
+}
+
+/*---------------------------------------*/
+
+.nav-container {
+  position: fixed;
+  display: inline-grid;
+  grid-template-columns: 20% auto 30%;
+  width: 100%;
+  height: 10%;
+
+  color: white;
+}
+
+.home-btn {
+  color: blue;
+}
+
+.nav-space {
+  color: green;
+}
+
+.nav {
+  color: green;
+}
+
+.name {
+  position: relative;
+  top: calc(5%);
+  text-align: center;
+}
+
+.title-container {
+  position: relative;
+  height: 30%;
+  top: calc(35%);
+  text-align: center;
+}
+
+.title {
+  position: relative;
+}
+
+.subtitle {
+  position: relative;
+}
+
+/*---------------------------------------*/
+
+.personal-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40% 50% 10%;
+  grid-template-rows: 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.avi {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.greeting {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin: auto;
+}
+
+.about-me {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  margin: auto;
+}
+
+/*---------------------------------------*/
+
+.connect-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 85% 15%;
+  width: 100%;
+  height: 100%;
+}
+
+.contact {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  margin: auto;
+}
+
+.portfolio-memo {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  margin: auto;
+}
+
+.footer {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  margin: auto;
+  text-align: center;
+}
