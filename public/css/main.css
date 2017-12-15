@@ -18,78 +18,45 @@ body {
 
 .about {
   position: absolute;
-  width: 95%;
-  height: 95vh;
+  width: 98%;
+  height: 98vh;
   background: #BEC6C7;
   margin: auto;
-  top: calc(2.5%);
-  left: calc(2.5%);
-}
-
-.portfolio {
-  width: 95%;
-  height: 95vh;
-  background: #BEC6C7;
-  margin: auto;
-  position: absolute;
-  top: calc(102.5vh);
-  left: calc(2.5%);
+  top: calc(1%);
+  left: calc(1%);
 }
 
 /*---------------------------------------*/
 
-.contain {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
-.block-half {
-  float: left;
-  width: 50%;
-  height: 50%;
-  position: relative;
-  display: inline-block;
-}
-
-.block-full {
-  float: left;
-  width: 100%;
-  height: 50%;
-  position: relative;
-}
-
-.inner-block {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 10%;
-  padding-bottom: 10%;
-  box-sizing: border-box;
+.nav {
+  position: absolute;
+  top: calc(5%);
+  left: calc(5%);
+  width: calc(90%);
+  height: calc(10%);
 }
 
 .avi {
+  position: absolute;
+  top: calc(20%);
+  left: calc(5%);
+  width: calc(30%);
+  height: calc(30%);
   object-fit: contain;
-  border-radius: 50%;
 }
 
 .bio {
-  text-align: center;
+  position: absolute;
+  top: calc(20%);
+  left: calc(50%);
+  width: calc(40%);
+  height: calc(30%);
 }
 
-div.skills {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: inline-block;
-}
-
-.body2 {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  display: inline-block;
+.services {
+  position: absolute;
+  top: calc(60%);
+  left: calc(5%);
+  width: calc(90%);
+  height: calc(30%);
 }
