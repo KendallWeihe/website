@@ -1,59 +1,95 @@
 
-
-html, body {
+html {
   margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-  background: #092834;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200vh;
+  background: black;
+}
+
+/*---------------------------------------*/
 
 .about {
-  width: 90%;
-  height: 100vh;
-  background: #67AFCB;
+  position: absolute;
+  width: 95%;
+  height: 95vh;
+  background: #BEC6C7;
   margin: auto;
+  top: calc(2.5%);
+  left: calc(2.5%);
 }
 
 .portfolio {
-  width: 90%;
-  height: 100vh;
-  background: #347B98;
+  width: 95%;
+  height: 95vh;
+  background: #BEC6C7;
   margin: auto;
+  position: absolute;
+  top: calc(102.5vh);
+  left: calc(2.5%);
 }
 
-.contact {
-  width: 90%;
-  height: 100vh;
-  background: #1A3E4C;
-  margin: auto;
+/*---------------------------------------*/
+
+.contain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.block-half {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+.block-full {
+  float: left;
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.inner-block {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  box-sizing: border-box;
 }
 
 .avi {
-  border-radius: 40%;
-  top: calc(10%);
-  left: calc(10%);
-  position: absolute;
-  object-fit: cover;
-  width: calc(30%);
-  height: calc(30%);
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.title-wrap {
-  position: absolute;
-  top: calc(10%);
-  left: calc(50%);
-  height: calc(30%);
-  width: calc(40%);
+.bio {
   text-align: center;
 }
 
-.title {
+div.skills {
   position: relative;
-  top: calc(10%);
+  width: 50%;
+  height: 100%;
+  display: inline-block;
 }
 
-.subtitle {
+.body2 {
   position: relative;
-  top: calc(50%);
+  width: 50%;
+  height: 100%;
+  display: inline-block;
 }
