@@ -30,33 +30,34 @@ body {
 
 .nav {
   position: absolute;
-  top: calc(5%);
+  /*top: calc(5%);
   left: calc(5%);
   width: calc(90%);
-  height: calc(10%);
+  height: calc(10%);*/
 }
 
 .avi {
   position: absolute;
-  top: calc(20%);
+  /*top: calc(20%);
   left: calc(5%);
-  width: calc(30%);
-  height: calc(30%);
-  object-fit: contain;
+  width: calc(40%);
+  height: calc(40%);*/
+  /*object-fit: contain;*/
 }
 
 .bio {
   position: absolute;
-  top: calc(20%);
+  text-align: center;
+  /*top: calc(20%);
   left: calc(50%);
-  width: calc(40%);
-  height: calc(30%);
+  width: calc(45%);
+  height: calc(40%);*/
 }
 
-.services {
+.services-left {
   position: absolute;
-  top: calc(60%);
-  left: calc(5%);
-  width: calc(90%);
-  height: calc(30%);
+}
+
+.services-right {
+  position: absolute;
 }
