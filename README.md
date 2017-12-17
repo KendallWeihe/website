@@ -29,28 +29,15 @@
 
 
 ## TODO:
-  <!-- - add fixed background image -->
-  <!-- - find font(s) -->
-  <!-- - generate color scheme -->
-  <!-- - personal section:
-    - use avi as img for now
-    - write my content
-    - style
-  - connect section
-    - write content
-    - style -->
-
-  - get on server
-  - dynamic style via js for mobile friendly
-
-  - get on server
-    <!-- - hide nav bar for now
-      - make it just the landing page -->
-    - dynamic styling via JS
-
-  - dynamic styling:
-    - express-device
-    - for now, two separate style sheets
+  - styling
+    - finalize stylesheets for desktop
+    - create stylesheet for mobile
+    - convert CSS to JS
+    - js file for desktop vs mobile
+    - js style function:
+      - should only style the grid system
+      - everything else should be relative
+    - add onresize function
 
 
 

@@ -70,7 +70,7 @@ body {
   top: calc(5%);
   text-align: center;
 
-  font-size: 4em;
+  font-size: 6vh;
   font-family: "adriane", Georgia, serif;
   color: navajowhite;
   height: 15%;
@@ -79,27 +79,47 @@ body {
   margin: auto;
 }
 
+.name p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
 .title-container {
   position: relative;
   top: calc(35%);
   text-align: center;
   font-family: "adriane", Georgia, serif;
   color: navajowhite;
-  height: 15%;
+  height: 25%;
   width: 60%;
   background-color: black;
   margin: auto;
 }
 
 .title {
-  position: relative;
-  font-size: 4em;
-  padding: 1.5%;
+  font-size: 6vh;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -75%)
 }
 
 .subtitle {
-  position: relative;
-  font-size: 2em;
+  font-size: 3vh;
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 100%)
 }
 
 /*---------------------------------------*/
@@ -130,9 +150,8 @@ body {
 .greeting {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  /*margin: auto;*/
 
-  font-size: 2em;
+  font-size: 5vh;
   padding-top: 20%;
   padding-left: 15%;
 }
@@ -140,9 +159,8 @@ body {
 .about-me {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  /*margin: auto;*/
 
-  font-size: 1.5em;
+  font-size: 2.5vh;
   padding-left: 15%;
 }
 
