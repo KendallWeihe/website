@@ -48,6 +48,10 @@
       - make it just the landing page -->
     - dynamic styling via JS
 
+  - dynamic styling:
+    - express-device
+    - for now, two separate style sheets
+
 
 
 
