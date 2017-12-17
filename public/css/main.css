@@ -20,6 +20,12 @@ body {
 
 /*---------------------------------------*/
 
+/*.h1 {
+  font-size: 6vh;
+}*/
+
+/*---------------------------------------*/
+
 .landing {
   position: absolute;
   width: 100%;
@@ -29,17 +35,13 @@ body {
 .personal {
   position: absolute;
   width: 100%;
-  height: 60vh;
   background: #526466;
-  top: calc(100vh);
 }
 
 .connect {
   position: absolute;
   width: 100%;
-  height: 40vh;
   background: #232c31;
-  top: calc(160vh);
 }
 
 /*---------------------------------------*/
@@ -70,14 +72,22 @@ body {
   top: calc(5%);
   text-align: center;
 
-  /*font-size: 4em;*/
+  /*font-size: 6vh;*/
   font-family: "adriane", Georgia, serif;
-  font-size: 6vh;
   color: navajowhite;
   height: 15%;
   width: 40%;
   background-color: black;
   margin: auto;
+}
+
+.name p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }
 
 .title-container {
@@ -86,21 +96,32 @@ body {
   text-align: center;
   font-family: "adriane", Georgia, serif;
   color: navajowhite;
-  height: 15%;
+  height: 25%;
   width: 60%;
   background-color: black;
   margin: auto;
 }
 
 .title {
-  position: relative;
-  font-size: 4em;
-  padding: 1.5%;
+  /*font-size: 6vh;*/
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -75%)
 }
 
 .subtitle {
-  position: relative;
-  font-size: 2em;
+  /*font-size: 3vh;*/
+
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  /*transform: translate(-50%, 100%)*/
 }
 
 /*---------------------------------------*/
@@ -108,8 +129,6 @@ body {
 .personal-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 40% 50% 10%;
-  grid-template-rows: 50% 50%;
   width: 100%;
   height: 100%;
 
@@ -118,32 +137,22 @@ body {
 }
 
 .avi {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-
   background-image: url('/img/avi2.JPG');
   background-repeat: no-repeat;
   background-attachment: local;
   background-size: cover;
-  background-position: right;
+  background-position-x: right;
+  background-position-y: bottom;
 }
 
 .greeting {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  /*margin: auto;*/
-
-  font-size: 2em;
-  padding-top: 20%;
-  padding-left: 15%;
+  /*font-size: 5vh;*/
+  /*padding-top: 20%;
+  padding-left: 15%;*/
 }
 
 .about-me {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  /*margin: auto;*/
-
-  font-size: 1.5em;
+  /*font-size: 2.5vh;*/
   padding-left: 15%;
 }
 
