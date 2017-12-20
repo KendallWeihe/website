@@ -20,17 +20,25 @@ const app = express()
 //   ca: ca
 // };
 
-var privateKey  = fs.readFileSync('encrypt/private.key', 'utf8');
-var certificate = fs.readFileSync('encrypt/kendallweihe.me.crt', 'utf8');
-var credentials = {
-  key: privateKey,
-  cert: certificate
-};
+// var privateKey  = fs.readFileSync('encrypt/private.key', 'utf8');
+// var certificate = fs.readFileSync('encrypt/kendallweihe.me.crt', 'utf8');
+// var credentials = {
+//   key: privateKey,
+//   cert: certificate
+// };
 
 app.set('view engine', 'ejs')
 app.use(forceSsl);
 app.use(express.static(__dirname + '/public'))
 app.use(device.capture());
+
+var key = fs.readFileSync('encrypt/key.pem');
+var cert = fs.readFileSync('encrypt/cert.pem');
+options = {
+  key: key,
+  cert: cert
+}
+https.createServer(options, app).listen(8443);
 
 app.get('/', function (req, res) {
   console.log(req.headers);
@@ -45,11 +53,11 @@ app.get('/', function (req, res) {
   res.render("home", { device_type : device_type_enum });
 })
 
-var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
-
-httpServer.listen(8080);
-httpsServer.listen(8443);
+// var httpServer = http.createServer(app);
+// var httpsServer = https.createServer(credentials, app);
+//
+// httpServer.listen(8080);
+// httpsServer.listen(8443);
 
 // var https = require('https');
 // https.createServer(options, app).listen(3001);
