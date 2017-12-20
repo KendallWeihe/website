@@ -1,5 +1,11 @@
 # README
 
+# EC2:
+  - each site runs in a container
+  - reverse proxy
+  - each site uses https on port 443
+  - https is forced
+
 
 ## design:
   - pages:
