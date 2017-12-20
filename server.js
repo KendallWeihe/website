@@ -28,17 +28,17 @@ const app = express()
 // };
 
 app.set('view engine', 'ejs')
-app.use(forceSsl);
+// app.use(forceSsl);
 app.use(express.static(__dirname + '/public'))
 app.use(device.capture());
 
-var key = fs.readFileSync('encrypt/key.pem');
-var cert = fs.readFileSync('encrypt/cert.pem');
-options = {
-  key: key,
-  cert: cert
-}
-https.createServer(options, app).listen(8443);
+// var key = fs.readFileSync('encrypt/key.pem');
+// var cert = fs.readFileSync('encrypt/cert.pem');
+// options = {
+//   key: key,
+//   cert: cert
+// }
+// https.createServer(options, app).listen(8443);
 
 app.get('/', function (req, res) {
   console.log(req.headers);
@@ -62,6 +62,6 @@ app.get('/', function (req, res) {
 // var https = require('https');
 // https.createServer(options, app).listen(3001);
 
-// app.listen(3001, function () {
-//   console.log('Example app listening on port 3000!')
-// })
+app.listen(3001, function () {
+  console.log('Example app listening on port 3000!')
+})

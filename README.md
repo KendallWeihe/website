@@ -5,6 +5,7 @@
   - reverse proxy
   - each site uses https on port 443
   - https is forced
+  - kubernetes to manage containers
 
 
 ## design:
