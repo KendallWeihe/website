@@ -27,7 +27,7 @@ server.listen(443, function () {
     console.log( 'Express server listening on port ' + server.address().port );
 });
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
 
   console.log(req.headers);
   console.log(req.connection.remoteAddress);
@@ -39,4 +39,9 @@ app.get('/', function (req, res) {
     device_type_enum = 1;
   }
   res.render("home", { device_type : device_type_enum });
+})
+
+app.get("/health", function(req, res) {
+  res.sendStatus(200);
+  res.end();
 })
