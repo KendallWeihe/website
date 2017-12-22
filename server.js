@@ -9,8 +9,8 @@ var forceSsl = require('express-force-ssl');
 var device = require('express-device');
 
 var options = {
-  key: fs.readFileSync( 'encrypt/localhost.key' ),
-  cert: fs.readFileSync( 'encrypt/localhost.cert' ),
+  key: fs.readFileSync( 'encrypt/kendallweihe.me.key' ),
+  cert: fs.readFileSync( 'encrypt/kendallweihe.me.cert' ),
   requestCert: false,
   rejectUnauthorized: false
 };
