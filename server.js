@@ -8,6 +8,13 @@ var http = require('http');
 var forceSsl = require('express-force-ssl');
 var device = require('express-device');
 
+var options = {
+  key: fs.readFileSync( 'encrypt/localhost.key' ),
+  cert: fs.readFileSync( 'encrypt/localhost.cert' ),
+  requestCert: false,
+  rejectUnauthorized: false
+};
+
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -15,6 +22,10 @@ app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(device.capture());
 
+var server = https.createServer( options, app );
+server.listen(443, function () {
+    console.log( 'Express server listening on port ' + server.address().port );
+});
 
 app.get('/', function (req, res) {
 
@@ -28,8 +39,4 @@ app.get('/', function (req, res) {
     device_type_enum = 1;
   }
   res.render("home", { device_type : device_type_enum });
-})
-
-app.listen(443, function () {
-  console.log('Example app listening on port 443!')
 })
