@@ -23,14 +23,14 @@
   - I also think ELB is already secure
     - ...so let's setup an https server attached to an ELB
 
-  - ...
-  - https://www.kevinleary.net/self-signed-trusted-certificates-node-js-express-js/
+  - regarding https on my website:
+    - rename new instance and use it
+    - use same load balancer
+    - route route 53 to load balancer
+    - merge https branch to master
+    - tmux stuff...
+    - wait...
 
-  - https node server at 443
-    - force https:
-      - listen on 80 & rewrite http header to https
-  - load balancer https
-  - reroute route53 to load balancer
 
 # container stuff
   - make new repo for this
