@@ -24,6 +24,7 @@
     - ...so let's setup an https server attached to an ELB
 
   - ...
+  - https://www.kevinleary.net/self-signed-trusted-certificates-node-js-express-js/
 
   - https node server at 443
     - force https:

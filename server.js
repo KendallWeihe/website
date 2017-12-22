@@ -8,6 +8,13 @@ var http = require('http');
 var forceSsl = require('express-force-ssl');
 var device = require('express-device');
 
+var options = {
+  key: fs.readFileSync( 'encrypt/kendallweihe.me.key' ),
+  cert: fs.readFileSync( 'encrypt/kendallweihe.me.cert' ),
+  requestCert: false,
+  rejectUnauthorized: false
+};
+
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -15,8 +22,12 @@ app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(device.capture());
 
+var server = https.createServer( options, app );
+server.listen(443, function () {
+    console.log( 'Express server listening on port ' + server.address().port );
+});
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
 
   console.log(req.headers);
   console.log(req.connection.remoteAddress);
@@ -30,6 +41,7 @@ app.get('/', function (req, res) {
   res.render("home", { device_type : device_type_enum });
 })
 
-app.listen(443, function () {
-  console.log('Example app listening on port 443!')
+app.get("/health", function(req, res) {
+  res.sendStatus(200);
+  res.end();
 })
