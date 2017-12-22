@@ -28,6 +28,10 @@ server.listen(443, function () {
 });
 
 app.get('/', function(req, res) {
+  if(req.get('X-Forwarded-Proto') !== 'https') {
+    console.log("Insecure, redirecting...");
+    res.redirect('https://' + req.get('Host') + req.url);
+  }
 
   console.log(req.headers);
   console.log(req.connection.remoteAddress);
