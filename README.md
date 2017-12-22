@@ -13,12 +13,31 @@
       - change ec2 hostname
 
 # HTTPS:
-  - put my site in a docker
-  - map port 3001
-  - add https support in node code
-  - load balancer listener
-    - https only
-    - map to port 3001... hmm application load balancer does not support
+  - stand up new instance for this
+  - make branch for this
+  - ...
+
+  - I have a certificate for kendallweihe.me approved by aws
+    - ...I think this means that any self signed cert with fqdn as
+        kendallweihe.me is secure ...?
+  - I also think ELB is already secure
+    - ...so let's setup an https server attached to an ELB
+
+  - ...
+
+  - https node server at 443
+    - force https:
+      - listen on 80 & rewrite http header to https
+  - load balancer https
+  - reroute route53 to load balancer
+
+# container stuff
+  - make new repo for this
+  - docker compose (for now)?
+  - reverse proxy container
+  - test server container
+    - multi container networking?
+
 
 
 
