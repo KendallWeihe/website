@@ -24,6 +24,7 @@
     "express-device": "^0.4.2",
     "express-force-ssl": "^0.3.2",
     "npm": "^5.6.0",
+    "simple-node-logger": "^0.93.33",
     "util": "^0.10.3"
   }
 }

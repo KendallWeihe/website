@@ -4,6 +4,7 @@ encrypt/
 *.key
 *.crs
 *.crt
+*.log
 
 # Logs
 logs
