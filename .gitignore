@@ -5,6 +5,7 @@ encrypt/
 *.crs
 *.crt
 *.log
+logs/
 
 # Logs
 logs
