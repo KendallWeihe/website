@@ -1,4 +1,6 @@
 
+// NOTE: everything in here is currently obsolete -- keeping for reference purposes
+
 function device() {
   var width = get_physical_width();
   var height = get_physical_height();
