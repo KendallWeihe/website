@@ -1,5 +1,5 @@
 
-// Make sure to run the code using sudo as port 80 needs sudo access
+// NOTE: this can be useful for local development 
 
 const http = require('http');
 
