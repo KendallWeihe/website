@@ -10,9 +10,7 @@ var device = require('express-device');
 
 var options = {
   key: fs.readFileSync( 'encrypt/kendallweihe.me.key' ),
-  cert: fs.readFileSync( 'encrypt/kendallweihe.me.cert' ),
-  requestCert: false,
-  rejectUnauthorized: false
+  cert: fs.readFileSync( 'encrypt/kendallweihe.me.cert' )
 };
 
 const app = express()
