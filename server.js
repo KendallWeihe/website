@@ -1,7 +1,9 @@
 const express = require('express');
-const util = require('util')
-const AWS = require('aws-sdk');
 const log = require('simple-node-logger').createSimpleLogger('info.log');
+
+// // NOT CURRENTLY USED
+// const util = require('util')
+// const AWS = require('aws-sdk');
 
 var fs = require('fs');
 var https = require('https');
