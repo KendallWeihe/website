@@ -21,6 +21,7 @@
   - `sudo KEY=<path>/<name>.key CERT=<path>/<name>.cert node server.js`
 
 # TODO:
+  - add a job that will backup log files w/ scp
   - throw all this in a Docker container (w/ hopes to orchestrate multiple sites in future)
   - auto style for PHONE landscape
   - build automation
