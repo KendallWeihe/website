@@ -8,9 +8,13 @@ var https = require('https');
 var forceSsl = require('express-force-ssl');
 var device = require('express-device');
 
+var key = process.env.KEY;
+var cert = process.env.CERT;
+console.log("KEY: ", key);
+console.log("CERT: ", cert);
 var options = {
-  key: fs.readFileSync( 'encrypt/kendallweihe.me.key' ),
-  cert: fs.readFileSync( 'encrypt/kendallweihe.me.cert' )
+  key: fs.readFileSync(key),
+  cert: fs.readFileSync(cert)
 };
 
 const app = express()
