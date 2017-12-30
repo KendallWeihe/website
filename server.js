@@ -7,7 +7,6 @@ const log = require('simple-node-logger').createSimpleLogger('info.log');
 
 var fs = require('fs');
 var https = require('https');
-var forceSsl = require('express-force-ssl');
 var device = require('express-device');
 
 var key = process.env.KEY;
@@ -34,7 +33,7 @@ server.listen(443, function () {
 app.get('/', function(req, res) {
   console.log(req.headers);
   log.info(req.headers);
-  if (req.get('X-Forwarded-Proto') !== 'https') {
+  if (req.headers.host !== "localhost" && req.get('X-Forwarded-Proto') !== 'https') {
     console.log("Insecure, redirecting...");
     log.info("Insecure, redirecting...");
     res.redirect('https://' + req.get('Host') + req.url);
