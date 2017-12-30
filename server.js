@@ -54,6 +54,24 @@ app.get('/', function(req, res) {
   }
 })
 
+app.get('/portfolio', function(req, res) {
+  console.log(req.headers);
+  log.info(req.headers);
+  if (req.headers.host !== "localhost" && req.get('X-Forwarded-Proto') !== 'https') {
+    console.log("Insecure, redirecting...");
+    log.info("Insecure, redirecting...");
+    res.redirect('https://' + req.get('Host') + req.url);
+  }
+  else {
+    var device_type = req.device.type.toUpperCase();
+    var device_type_enum = 0;
+    if (device_type == "PHONE") {
+      device_type_enum = 1;
+    }
+    res.render("portfolio", { device_type : device_type_enum });
+  }
+})
+
 app.get("/health", function(req, res) {
   res.sendStatus(200);
   res.end();
