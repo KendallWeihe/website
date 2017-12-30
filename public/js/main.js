@@ -1,5 +1,89 @@
 
-// NOTE: everything in here is currently obsolete -- keeping for reference purposes
+/*
+  parent_class: div
+  child_class: p
+  margin: buffer amount
+*/
+function fit_font(parent_class, child_class, margin) {
+  var p_width = document.getElementsByClassName(parent_class)[0].clientWidth;
+  var p_height = document.getElementsByClassName(parent_class)[0].clientHeight;
+  // console.log("Parent width:", p_width);
+  // console.log("Parent height:", p_height);
+
+  var c_width = document.getElementsByClassName(child_class)[0].clientWidth;
+  var c_height = document.getElementsByClassName(child_class)[0].clientHeight;
+  // console.log("Child width: ", c_width);
+  // console.log("Child height: ", c_height);
+
+  var contain = "";
+  if ((Math.abs(p_width - c_width)) < (Math.abs(p_height - c_height))) {
+    contain = "height";
+    document.getElementsByClassName(child_class)[0].style.width = p_width.toString() + "px";
+  }
+  else {
+    contain = "width";
+    document.getElementsByClassName(child_class)[0].style.height = p_height.toString() + "px";
+  }
+
+  var stop_width = p_width - (p_width * margin);
+  var stop_height = p_height - (p_height * margin);
+  // console.log("Stop width: ", stop_width);
+  // console.log("Stop height: ", stop_height);
+
+  var fit = false;
+  while (!fit) {
+    var c_width = document.getElementsByClassName(child_class)[0].clientWidth;
+    var c_height = document.getElementsByClassName(child_class)[0].clientHeight;
+    // console.log("Child width: ", c_width);
+    // console.log("Child height: ", c_height);
+
+    var c_font = parseFloat(document.getElementsByClassName(child_class)[0].style.fontSize);
+    // console.log("Child font size: ", c_font);
+
+    if (contain == "height") {
+      if (((c_height >= stop_height - 30)) && (c_height <= (stop_height + 30))) {
+        fit = true;
+        break;
+      }
+      else if (c_height <= stop_height - 5) {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font + 1).toString() + "px";
+      }
+      else {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+      }
+    }
+    else {
+      if (((c_width >= stop_width - 5)) && (c_width <= (stop_width + 5))) {
+        fit = true;
+        break;
+      }
+      else if (c_width <= stop_width - 5) {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font + 1).toString() + "px";
+      }
+      else {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+      }
+    }
+  }
+
+  var margin_top = (p_height - c_height) / 2;
+  document.getElementsByClassName(child_class)[0].style.margin = "auto";
+  document.getElementsByClassName(child_class)[0].style.marginTop = margin_top.toString() + "px";
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+// NOTE: everything below here is currently obsolete -- keeping for reference purposes
 
 function device() {
   var width = get_physical_width();

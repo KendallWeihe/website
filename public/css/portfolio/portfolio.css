@@ -37,24 +37,25 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 20vh 50vh;
-
-  background-color: white;
 }
 
 .title {
   grid-row: 1 / 2;
-
-  background-color: grey;
+  font-family: "adriane", Georgia, serif;
+  text-align: center;
 }
 
 .body {
   grid-row: 2 / 3;
+  font-family: "adriane", Georgia, serif;
+  text-align: left;
+  margin: 5% 15% 5% 15%;
 }
 
 .p1 {
   grid-row: 3 / 4;
 
-  background-color: red;
+  background-color: white;
 }
 
 .report {
@@ -65,13 +66,23 @@ body {
   display: grid;
   grid-template-columns: 33% 33% 34%;
   grid-template-rows: 50% 50%;
-
-  background-color: black;
 }
 
 .desktop {
   grid-column: 1 / 3;
   grid-row: 1 / 2;
+}
+
+.qf-desktop {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.qf-phone {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .phone {
@@ -81,6 +92,18 @@ body {
 
 .objectives {
   grid-column: 1 / 2;
+  grid-row: 2 / 3;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 80%;
+}
+
+.objectives-memo {
+  grid-row: 1 / 2;
+}
+
+.objectives-list {
   grid-row: 2 / 3;
 }
 
