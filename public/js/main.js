@@ -6,28 +6,36 @@
 function fit_font(parent_class, child_class) {
   var p_width = document.getElementsByClassName(parent_class)[0].clientWidth;
   var p_height = document.getElementsByClassName(parent_class)[0].clientHeight;
-  // console.log("Parent width:", p_width);
-  // console.log("Parent height:", p_height);
+  console.log("Parent width:", p_width);
+  console.log("Parent height:", p_height);
 
   var c_width = document.getElementsByClassName(child_class)[0].clientWidth;
   var c_height = document.getElementsByClassName(child_class)[0].clientHeight;
-  // console.log("Child width: ", c_width);
-  // console.log("Child height: ", c_height);
+  console.log("Child width: ", c_width);
+  console.log("Child height: ", c_height);
 
   var contain = "";
-  if ((Math.abs(p_width - c_width)) < (Math.abs(p_height - c_height))) {
+  // if ((Math.abs(p_width - c_width)) < (Math.abs(p_height - c_height))) {
+  //   contain = "height";
+  //   document.getElementsByClassName(child_class)[0].style.width = p_width.toString() + "px";
+  // }
+  // else {
+  //   contain = "width";
+  //   document.getElementsByClassName(child_class)[0].style.height = p_height.toString() + "px";
+  // }
+  if (p_width > p_height) {
     contain = "height";
-    document.getElementsByClassName(child_class)[0].style.width = p_width.toString() + "px";
+    // document.getElementsByClassName(child_class)[0].style.width = p_width.toString() + "px";
   }
   else {
     contain = "width";
-    document.getElementsByClassName(child_class)[0].style.height = p_height.toString() + "px";
+    // document.getElementsByClassName(child_class)[0].style.height = p_height.toString() + "px";
   }
-
+  console.log("Containing via the ", contain);
   var stop_width = p_width;
   var stop_height = p_height;
-  // console.log("Stop width: ", stop_width);
-  // console.log("Stop height: ", stop_height);
+  console.log("Stop width: ", stop_width);
+  console.log("Stop height: ", stop_height);
 
   var count = 0
 
@@ -37,7 +45,10 @@ function fit_font(parent_class, child_class) {
   while (!fit) {
     count += 1;
     if (count > 200) {
-      console.log("Resizing error...");
+      console.log("Resizing error for ", parent_class);
+      console.log("Child width: ", c_width);
+      console.log("Child height: ", c_height);
+      console.log("Child font size: ", c_font);
       break;
     }
 
@@ -103,8 +114,8 @@ function fit_font(parent_class, child_class) {
     }
   }
 
+  var c_height = document.getElementsByClassName(child_class)[0].clientHeight;
   var margin_top = (p_height - c_height) / 2;
-  document.getElementsByClassName(child_class)[0].style.margin = "auto";
   document.getElementsByClassName(child_class)[0].style.marginTop = margin_top.toString() + "px";
 
 };
