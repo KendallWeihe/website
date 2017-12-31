@@ -2,9 +2,8 @@
 /*
   parent_class: div
   child_class: p
-  margin: buffer amount
 */
-function fit_font(parent_class, child_class, margin) {
+function fit_font(parent_class, child_class) {
   var p_width = document.getElementsByClassName(parent_class)[0].clientWidth;
   var p_height = document.getElementsByClassName(parent_class)[0].clientHeight;
   // console.log("Parent width:", p_width);
@@ -25,13 +24,23 @@ function fit_font(parent_class, child_class, margin) {
     document.getElementsByClassName(child_class)[0].style.height = p_height.toString() + "px";
   }
 
-  var stop_width = p_width - (p_width * margin);
-  var stop_height = p_height - (p_height * margin);
+  var stop_width = p_width;
+  var stop_height = p_height;
   // console.log("Stop width: ", stop_width);
   // console.log("Stop height: ", stop_height);
 
+  var count = 0
+
+  var previous_slope = ""
+  var current_slope = ""
   var fit = false;
   while (!fit) {
+    count += 1;
+    if (count > 200) {
+      console.log("Resizing error...");
+      break;
+    }
+
     var c_width = document.getElementsByClassName(child_class)[0].clientWidth;
     var c_height = document.getElementsByClassName(child_class)[0].clientHeight;
     // console.log("Child width: ", c_width);
@@ -41,28 +50,56 @@ function fit_font(parent_class, child_class, margin) {
     // console.log("Child font size: ", c_font);
 
     if (contain == "height") {
-      if (((c_height >= stop_height - 30)) && (c_height <= (stop_height + 30))) {
-        fit = true;
-        break;
-      }
-      else if (c_height <= stop_height - 5) {
+      // console.log("Stop height: ", stop_height);
+      if (c_height <= stop_height - 5) {
         document.getElementsByClassName(child_class)[0].style.fontSize = (c_font + 1).toString() + "px";
+        current_slope = "upsampling"
       }
       else {
         document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+        current_slope = "downsampling"
       }
+
+      // console.log("Current slope:", current_slope);
+      // console.log("Previous slope:", previous_slope);
+
+      if (current_slope == "downsampling" && previous_slope == "upsampling") {
+        fit = true;
+        break;
+      }
+      else if (current_slope == "upsampling" && previous_slope == "downsampling") {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+        fit = true;
+        break;
+      }
+
+      previous_slope = current_slope
     }
     else {
-      if (((c_width >= stop_width - 5)) && (c_width <= (stop_width + 5))) {
-        fit = true;
-        break;
-      }
-      else if (c_width <= stop_width - 5) {
+      // console.log("Stop width: ", stop_width);
+      if (c_width <= stop_width - 5) {
         document.getElementsByClassName(child_class)[0].style.fontSize = (c_font + 1).toString() + "px";
+        current_slope = "upsampling"
       }
       else {
         document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+        current_slope = "downsampling"
       }
+
+      // console.log("Current slope:", current_slope);
+      // console.log("Previous slope:", previous_slope);
+
+      if (current_slope == "downsampling" && previous_slope == "upsampling") {
+        fit = true;
+        break;
+      }
+      else if (current_slope == "upsampling" && previous_slope == "downsampling") {
+        document.getElementsByClassName(child_class)[0].style.fontSize = (c_font - 1).toString() + "px";
+        fit = true;
+        break;
+      }
+
+      previous_slope = current_slope
     }
   }
 
