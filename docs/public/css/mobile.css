@@ -1,0 +1,82 @@
+
+.personal {
+  height: 80vh;
+  top: calc(100vh);
+}
+
+.connect {
+  height: 60vh;
+  top: calc(180vh);
+}
+
+/*---------------------------------------*/
+
+.name {
+  font-size: 4vh;
+}
+
+.title {
+  font-size: 4vh;
+}
+
+.subtitle {
+  font-size: 1.5vh;
+  transform: translate(-50%, 250%)
+}
+
+/*---------------------------------------*/
+
+.personal-grid {
+  grid-template-rows: 50% 25% 25%;
+}
+
+.avi {
+  grid-row: 1 / 2;
+}
+
+.greeting {
+  grid-row: 2 / 3;
+  font-size: 4vh;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+
+.about-me {
+  grid-row: 3 / 4;
+  font-size: 2vh;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/*---------------------------------------*/
+
+.get-in-touch {
+  font-size: 4vh;
+}
+
+.connect-body {
+  font-size: 2vh;
+}
+
+.mail-to {
+  font-size: 2vh;
+  color: #859b98;
+}
+
+.linked-in {
+  font-size: 2vh;
+  color: #859b98;
+}
+
+.portfolio-title {
+  font-size: 4vh;
+}
+
+.portfolio-body {
+  font-size: 1.75vh;
+}
+
+.github {
+  font-size: 1.75vh;
+  color: #859b98;
+}

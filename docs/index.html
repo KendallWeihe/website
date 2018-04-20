@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./public/css/home.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./public/css/desktop.css"> -->
+
+  </head>
+  <body>
+
+    <!-- <% if (device_type == 0) { %>
+      <link rel="stylesheet" type="text/css" href="css/home/desktop.css">
+    <% } else { %>
+      <link rel="stylesheet" type="text/css" href="css/home/phone.css">
+    <% } %> -->
+
+    <script>
+        let width = document.getElementsByTagName("body")[0].clientWidth;
+        let height = document.getElementsByTagName("body")[0].clientHeight;
+        let ratio = height / width;
+
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.type = "text/css";
+
+        if (ratio > 2.0)
+        {
+          link.href = "./public/css/mobile.css";
+        }
+        else 
+        {
+          link.href = "./public/css/desktop.css";
+        }
+
+        document.getElementsByTagName("head")[0].appendChild(link);
+      </script>
+  
+    <div class="landing">
+      <div class="name"><p>KENDALL WEIHE</p></div>
+      <div class="title-container">
+        <div class="title">SOFTWARE ENGINEER</div>
+        <div class="subtitle">OFFICIAL "ONE'S AND ZERO'S GUY"</div>
+      </div>
+    </div>
+
+    <div class="personal">
+      <div class="personal-grid">
+        <div class="avi"></div>
+        <div class="greeting">
+          <b>Hi there, Kendall here.</b>
+        </div>
+        <div class="about-me">
+          I'm a software engineer. It's what I do for a living.
+          Working with software is like getting to solve puzzles for a living.
+          Aside from software, I enjoy these things: hiking, skiing, and road trips //
+          coffee, beer, and eggs // UK basketball, the horse track, and topical humor.
+          I'm currently accepting new projects, so reach out to me @ kendallweihe@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <div class="connect">
+      <div class="connect-grid">
+        <div class="contact">
+          <b class="get-in-touch">Get in touch:</b>
+          <br><br>
+          <p class="connect-body">
+            Have a project in mind? Want to discuss something awesome?
+            Send me an email, or connect with me via LinkedIn!
+          </p>
+          <br>
+          <a href="mailto:kendallweihe@gmail.com"
+              class="mail-to">
+            kendallweihe@gmail.com
+          </a>
+          <br>
+          <a href="https://www.linkedin.com/in/kendall-weihe-5b963a64/"
+              class="linked-in" target="_blank">
+            LinkedIn
+          </a>
+        </div>
+    
+        <div class="portfolio-memo">
+          <b class="portfolio-title">Want to see some things I've done?</b>
+          <br><br>
+          <p class="portfolio-body">
+            I'm currently working on a Portfolio page, but in the mean time,
+            check out my GitHub. Some of my best work is private, so reach
+            out and we can discuss details!
+          </p>
+          <br>
+          <a href="https://github.com/KendallWeihe"
+              class="github" target="_blank">
+              GitHub (username: KendallWeihe)
+          </a>
+        </div>
+    
+        <div class="footer">Page developed by myself primarily with: HTML | CSS | JS | NodeJS</div>
+      </div>
+    </div>
+    
+  </body>
+</html>
