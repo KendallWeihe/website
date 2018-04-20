@@ -1,36 +1,26 @@
 
-# Primary tools used:
-  - NodeJS & Express
-  - HTML
-  - JavaScript
-  - CSS
-  - AWS
-    - hosting
-    - load balancing
-    - DNS resolution
-  - tmux
+# Architecture:
+- S3 hosting
+- CloudFront CDN
+- Route53 DNS
 
-# Setup:
-  - `git clone ...`
-  - `npm install`
-  - TLS things:
-    - generate key: `openssl genrsa -out <name>.key 2048`
-    - generate cert: `openssl req -new -x509 -key <name>.key -out <name>.cert -days 3650 -subj /CN=<name>`
+## S3
+- properties: *host static website*
 
-# Start server:
-  - `sudo KEY=<path>/<name>.key CERT=<path>/<name>.cert node server.js`
+## CloudFront
+- origin domain: s3 bucket
+- origin path: index.html
+- redirect http to https
+- custom SSL cert
+- CNAME: www.kendallweihe.me
 
-# TODO:
-  - write different versions of dialog
-  - add portfolio page
-    - four sections
-      - 3 for highlighted projects
-      - 1 for miscellaneous crap
-  - logo icon (fixed top left)
-    - links to a more personal About Me page
-  - portfolio icon (fixed top right)
-  - throw all this in a Docker container (w/ hopes to orchestrate multiple sites in future)
-  - CloudFormation script
-  - add a job that will backup log files w/ scp
-  - auto style for PHONE landscape
-  - build automation
+## Route53
+- keep default NS & SOA 
+- type A
+  - blank Name
+  - alias: CloudFront distribution
+
+# Deployment:
+- TODO: look into deployment tool
+  - upon merge w/ Master deploy site to S3 bucket
+
