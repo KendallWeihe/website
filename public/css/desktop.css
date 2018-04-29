@@ -1,4 +1,10 @@
 
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+}
+
 .personal {
   height: 60vh;
   top: calc(100vh);
@@ -27,28 +33,30 @@
 /*---------------------------------------*/
 
 .personal-grid {
-  grid-template-columns: 40% 50% 10%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 40% 60%;
 }
 
 .avi {
   grid-column: 1 / 2;
-  grid-row: 1 / 3;
+}
+
+.bio-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting {
   grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  font-size: 5vh;
-  padding-top: 20%;
-  padding-left: 15%;
+  flex: 1;
+  padding-top: 5%;
+  padding-left: 20%;
+  font-size: xx-large;
 }
 
 .about-me {
   grid-column: 2 / 3;
-  grid-row: 2 / 3;
-  font-size: 2.5vh;
-  padding-left: 15%;
+  flex: 3;
+  padding: 5%;
 }
 
 /*---------------------------------------*/
