@@ -56,7 +56,7 @@
 .about-me {
   grid-column: 2 / 3;
   flex: 3;
-  padding: 5%;
+  padding-left: 20%;
 }
 
 /*---------------------------------------*/

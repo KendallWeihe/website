@@ -50,7 +50,7 @@
 .about-me {
   grid-row: 2 / 3;
   flex: 3;
-  padding: 5%;
+  padding-left: 10%;
   font-size: 1.5vh;
 }
 
