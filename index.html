@@ -1,44 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./public/css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="./public/css/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 801px)" href="./public/css/desktop.css">
   </head>
   <body>
-
-    <script>
-      let resize = function(){
-        console.log("Resizing...");
-        let link = document.getElementById("device");
-        if (link != null)
-        {
-          document.getElementsByTagName("head")[0].removeChild(link);
-        }
-
-        let width = document.getElementsByTagName("body")[0].clientWidth;
-        let height = document.getElementsByTagName("body")[0].clientHeight;
-        let ratio = height / width;
-
-        link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.id = "device";
-
-        if (ratio > 1.75)
-        {
-          link.href = "./public/css/mobile.css";
-        }
-        else 
-        {
-          link.href = "./public/css/desktop.css";
-        }
-
-        document.getElementsByTagName("head")[0].appendChild(link);
-      };
-
-      window.addEventListener("load", resize);
-      window.addEventListener("resize", resize);
-    </script>
   
     <div class="landing">
       <div class="name"><p>KENDALL WEIHE</p></div>
